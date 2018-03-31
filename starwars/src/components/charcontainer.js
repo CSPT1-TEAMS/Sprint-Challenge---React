@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Button} from 'reactstrap';
-
+CardTitle, CardSubtitle, Button} from 'reactstrap';
+import PropTypes from "prop-types";
 const Charcontainer = (props) => {
 
 
@@ -29,7 +29,10 @@ const Charcontainer = (props) => {
 </div>
 
   )
-
+Charcontainer.PropTypes = {
+  name: PropTypes.string,
+  mass: PropTypes.number
+}
 
 
   
