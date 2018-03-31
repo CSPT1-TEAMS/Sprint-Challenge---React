@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import Charcontainer from './components/charcontainer.js'
 import './App.css';
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      starwarsChars: []
+      starwarsChars: [],
+      lukeImage: "https://vignette.wikia.nocookie.net/mugen/images/a/ad/Luke_Skywalker_Ep7.png/revision/latest?cb=20170504134541"
     };
   }
   componentDidMount() {
@@ -24,9 +26,14 @@ class App extends Component {
       });
   }
   render() {
+    const { starwarsChars } = this.state;
+    const {lukeImage} = this.state.lukeImage;
     return (
       <div className="App">
-        <h1 className="Header">React Wars</h1>
+      <h1>Star Wars Character Compendium</h1>
+      {starwarsChars.map((char, index, lukeImage) => <div > <Charcontainer key={index} character={char}   /></div>)}
+
+      
       </div>
     );
   }
